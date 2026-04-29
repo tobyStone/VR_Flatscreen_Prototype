@@ -8,6 +8,7 @@ public class FlatScreenPlayerController : MonoBehaviour
 
     private CharacterController controller;
     private float verticalLookRotation = 0f;
+    private float gravityVelocity = 0f;
 
     void Start()
     {
@@ -37,6 +38,11 @@ public class FlatScreenPlayerController : MonoBehaviour
 
     void LookAround()
     {
+        if (cameraTransform == null)
+        {
+            return;
+        }
+
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
@@ -53,8 +59,17 @@ public class FlatScreenPlayerController : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * x + transform.forward * z;
+        Vector3 horizontalMove = transform.right * x + transform.forward * z;
 
-        controller.Move(move * moveSpeed * Time.deltaTime);
+        if (controller.isGrounded && gravityVelocity < 0f)
+        {
+            gravityVelocity = -1f;
+        }
+
+        gravityVelocity += Physics.gravity.y * Time.deltaTime;
+
+        Vector3 verticalMove = Vector3.up * gravityVelocity;
+
+        controller.Move((horizontalMove * moveSpeed + verticalMove) * Time.deltaTime);
     }
 }
