@@ -6,7 +6,7 @@ A Unity 6 flatscreen first-person prototype set in a moon-base / space environme
 [![Watch the gameplay demo](docs/demo_thumbnail.png)](docs/demo.mp4)
 
 
-[Watch the gameplay demo](docs/demo.mp4)
+[Download / watch the gameplay demo](https://github.com/tobyStone/VR_Flatscreen_Prototype/raw/main/docs/demo.mp4)
 
 
 ## About
