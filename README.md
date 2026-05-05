@@ -4,7 +4,7 @@ A Unity 6 flatscreen first-person prototype set in a moon-base / space environme
 
 ## Demo
 
-[Watch the gameplay demo](docs/demo.mp4)
+[Watch the gameplay demo](docs/demo.mp4.mp4)
 
 ## About
 
