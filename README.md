@@ -145,7 +145,7 @@ The `Main Camera` inside the XR Origin will be controlled by the VR headset.
 
 ## 4. Replace the Flatscreen Camera
 
-The existing flatscreen player probably has its own camera and controller script.
+The existing flatscreen player has its own camera and controller script.
 
 To avoid having two active cameras:
 
